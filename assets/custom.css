@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.navbar-brand img {
+    width: 70px;
+}
+
+.navbar-nav {
+    font-family: 'Bangers', cursive;
+    font-stretch: expanded;
+    font-size: 20px;
+}
