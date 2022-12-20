@@ -9,6 +9,12 @@ function lastestComics(url) {
     .then(response => response.json())
     .then(data => {
         let comics = data.data.results;
+        for(i=0; i < comics.length; i++){
+            let path = comics[i].images[0].path
+            let ext = comics[i].images[0].extension;
+            let img = `${path}.${ext}`
+        }
+        
     })
 
 }
