@@ -12,10 +12,12 @@ function lastestComics(url) {
     .then(data => {
         let comics = data.data.results;
         for(i=0; i < comics.length; i++){
+            let title = comics[i].title
             let path = comics[i].images[0].path
             let ext = comics[i].images[0].extension;
             let img = `${path}.${ext}`
             comicsEl[i].setAttribute("src", img)
+            comicsEl[i].setAttribute("alt", title)
         }
         
     })
