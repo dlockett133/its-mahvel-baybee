@@ -5,8 +5,8 @@ let latestComicsurl = `https://gateway.marvel.com/v1/public/comics?${key}&format
 
 function lastestComics(url) {
 
-    let carouselEl = document.querySelectorAll(".carousel-item")
-    
+    let comicsEl = document.querySelectorAll("#comics")
+
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -15,10 +15,10 @@ function lastestComics(url) {
             let path = comics[i].images[0].path
             let ext = comics[i].images[0].extension;
             let img = `${path}.${ext}`
+            comicsEl[i].setAttribute("src", img)
         }
         
     })
-
 }
 
 lastestComics(latestComicsurl);
