@@ -10,6 +10,12 @@
     font-size: 20px;
 }
 
+.caption-title {
+    font-family: 'Bangers', cursive;
+    font-stretch: expanded;
+    font-size: 30px;
+}
+
 .carousel-item img{
     width: 500px; 
     height: 600px
