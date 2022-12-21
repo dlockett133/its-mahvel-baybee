@@ -7,6 +7,7 @@ function lastestComics(url) {
 
     let comicsEl = document.querySelectorAll("#comics")
     let captionTitle = document.querySelectorAll(".caption-title")
+    let captionBody = document.querySelectorAll(".caption-body")
 
     fetch(url)
     .then(response => response.json())
@@ -14,6 +15,7 @@ function lastestComics(url) {
         let comics = data.data.results;
         for(i=0; i < comics.length; i++){
             let title = comics[i].title
+            let date = comics[i].dates[0].date
             let path = comics[i].images[0].path
             let ext = comics[i].images[0].extension;
             let img = `${path}.${ext}`
@@ -23,6 +25,9 @@ function lastestComics(url) {
             comicsEl[i].setAttribute("alt", title)
 
             captionTitle[i].textContent = title;
+
+            let formatDate = moment(date).format(`MMMM D, YYYY`);
+            captionBody[i].innerHTML = `<strong>Published:</strong> ${formatDate}`
         }
         
     })
