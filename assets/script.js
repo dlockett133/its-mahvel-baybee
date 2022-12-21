@@ -27,7 +27,7 @@ function lastestComics(url) {
             captionTitle[i].textContent = title;
 
             let formatDate = moment(date).format(`MMMM D, YYYY`);
-            captionBody[i].innerHTML = `<strong>Published:</strong> ${formatDate}`
+            captionBody[i].innerHTML = `Published: ${formatDate}`
         }
         
     })
