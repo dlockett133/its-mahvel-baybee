@@ -13,7 +13,7 @@ function lastestComics(url) {
     .then(response => response.json())
     .then(data => {
         let comics = data.data.results;
-        for(i=0; i < comics.length; i++){
+        for(let i=0; i < comics.length; i++){
             let title = comics[i].title
             let date = comics[i].dates[0].date
             let path = comics[i].images[0].path
@@ -35,7 +35,8 @@ function lastestComics(url) {
 
 lastestComics(latestComicsurl);
 
-
+let heroesEl = document.querySelectorAll(".heroes")
+let heroName = document.querySelectorAll(".hero-name")
 function heroSearch (hero) {
 
     let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=${hero}&orderBy=name&limit=8`
@@ -43,7 +44,15 @@ function heroSearch (hero) {
     fetch(heroSearchUrl)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        let hero = data.data.results;
+        for (let i=0; i < hero.length; i++){
+            console.log(hero[i])
+            let name = hero[i].name
+
+            heroName[i].textContent = name
+        }
     })
 }
+
+heroSearch("hulk");
 // Insert Image of comic in background for carousel URGENT
