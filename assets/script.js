@@ -34,3 +34,9 @@ function lastestComics(url) {
 }
 
 lastestComics(latestComicsurl);
+
+function heroSearch (hero) {
+
+    let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=hu&orderBy=name&limit=8`
+}
+// Insert Image of comic in background for carousel URGENT
