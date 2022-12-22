@@ -35,8 +35,15 @@ function lastestComics(url) {
 
 lastestComics(latestComicsurl);
 
+
 function heroSearch (hero) {
 
-    let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=hu&orderBy=name&limit=8`
+    let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=${hero}&orderBy=name&limit=8`
+
+    fetch(heroSearchUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
 }
 // Insert Image of comic in background for carousel URGENT
