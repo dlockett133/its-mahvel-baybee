@@ -37,6 +37,7 @@ lastestComics(latestComicsurl);
 
 let heroesEl = document.querySelectorAll(".heroes")
 let heroName = document.querySelectorAll(".hero-name")
+let heroImage = document.querySelectorAll(".hero-image")
 function heroSearch (hero) {
 
     let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=${hero}&orderBy=name&limit=8`
@@ -52,6 +53,11 @@ function heroSearch (hero) {
             let ext = hero[i].thumbnail.extension
             let img = `${path}/portrait_incredible.${ext}`
             console.log(img)
+
+            // Sets the image(s) for the carousel
+            heroImage[i].setAttribute("src", img)
+            heroImage[i].setAttribute("alt", `Portrait of ${name}`);
+ 
             heroName[i].textContent = name
         }
     })
