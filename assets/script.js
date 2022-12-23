@@ -52,7 +52,6 @@ function heroSearch (hero) {
             let path = hero[i].thumbnail.path
             let ext = hero[i].thumbnail.extension
             let img = `${path}/portrait_incredible.${ext}`
-            console.log(img)
 
             // Sets the image(s) for the carousel
             heroImage[i].setAttribute("src", img)
