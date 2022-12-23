@@ -48,7 +48,10 @@ function heroSearch (hero) {
         for (let i=0; i < hero.length; i++){
             console.log(hero[i])
             let name = hero[i].name
-
+            let path = hero[i].thumbnail.path
+            let ext = hero[i].thumbnail.extension
+            let img = `${path}/portrait_incredible.${ext}`
+            console.log(img)
             heroName[i].textContent = name
         }
     })
