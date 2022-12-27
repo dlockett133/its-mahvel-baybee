@@ -39,7 +39,10 @@ let heroContainerEl = document.querySelector(".hero-container")
 let heroesEl = document.querySelectorAll(".heroes")
 let heroName = document.querySelectorAll(".hero-name")
 let heroImage = document.querySelectorAll(".hero-image")
-function heroSearch (hero) {
+
+function heroSearch(hero) {
+
+    removeAllChildNodes(heroContainerEl);
 
     let heroSearchUrl = `https://gateway.marvel.com/v1/public/characters?${key}&nameStartsWith=${hero}&orderBy=name&limit=8`
 
@@ -71,3 +74,10 @@ function heroSearch (hero) {
 
 heroSearch("hulk");
 // Insert Image of comic in background for carousel URGENT
+
+// Function that removes hero serch results for every new query
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
