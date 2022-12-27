@@ -57,22 +57,16 @@ function heroSearch(hero) {
             let ext = hero[i].thumbnail.extension
             let img = `${path}/portrait_incredible.${ext}`
 
-            // Sets the image(s) for the carousel
-            // heroImage[i].setAttribute("src", img)
-            // heroImage[i].setAttribute("alt", `Portrait of ${name}`);
-
             heroContainerEl.innerHTML += `
             <div class="col-md-3 heroes shadow-lg mb-4">
                 <img class="hero-image" alt="Portrait of ${name}" src="${img}" />
                 <h3 class="hero-name">${name}</h3>
             </div>`
-    
-            // heroName[i].textContent = name
         }
     })
 }
 
-heroSearch("hulk");
+heroSearch("silver surfer");
 
 // Function that removes hero search results for every new query
 function removeAllChildNodes(parent) {
