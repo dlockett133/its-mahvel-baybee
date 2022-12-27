@@ -11,7 +11,11 @@
 }
 
 .carousel-bg {
-    background: black;
+background-image: url(./images/marvel-all-character-wallpapers.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+/* transition: 5s; */
 }
 
 .caption-title {
