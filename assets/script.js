@@ -35,6 +35,7 @@ function lastestComics(url) {
 
 lastestComics(latestComicsurl);
 
+let heroContainerEl = document.querySelector(".hero-container")
 let heroesEl = document.querySelectorAll(".heroes")
 let heroName = document.querySelectorAll(".hero-name")
 let heroImage = document.querySelectorAll(".hero-image")
@@ -47,17 +48,23 @@ function heroSearch (hero) {
     .then(data => {
         let hero = data.data.results;
         for (let i=0; i < hero.length; i++){
-            console.log(hero[i])
+            // console.log(hero[i])
             let name = hero[i].name
             let path = hero[i].thumbnail.path
             let ext = hero[i].thumbnail.extension
             let img = `${path}/portrait_incredible.${ext}`
 
             // Sets the image(s) for the carousel
-            heroImage[i].setAttribute("src", img)
-            heroImage[i].setAttribute("alt", `Portrait of ${name}`);
- 
-            heroName[i].textContent = name
+            // heroImage[i].setAttribute("src", img)
+            // heroImage[i].setAttribute("alt", `Portrait of ${name}`);
+
+            heroContainerEl.innerHTML += `
+            <div class="col-md-3 heroes shadow-lg mb-4">
+                <img class="hero-image" alt="Portrait of ${name}" src="${img}" />
+                <h3 class="hero-name">${name}</h3>
+            </div>`
+    
+            // heroName[i].textContent = name
         }
     })
 }
