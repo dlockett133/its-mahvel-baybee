@@ -73,9 +73,8 @@ function heroSearch(hero) {
 }
 
 heroSearch("hulk");
-// Insert Image of comic in background for carousel URGENT
 
-// Function that removes hero serch results for every new query
+// Function that removes hero search results for every new query
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
